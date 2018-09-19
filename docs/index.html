@@ -5,13 +5,16 @@
 			function getId()
 			{
 				var uri = URI(document.documentURI);
-				uri.search(true);
+				var params = uri.search(true);
+				var id = params["id"];
+				return id;
 			}
 		</script>
 	</head>
 	<body>
 		<script>
 			var id = getId();
+			console.log(id);
 			
 		</script>
 	</body>

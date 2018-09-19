@@ -2,18 +2,18 @@
 	<head>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.19.1/URI.min.js"></script>
 		<script>
-			function getId()
+			function getParam(param)
 			{
 				var uri = URI(document.documentURI);
 				var params = uri.search(true);
-				var id = params["id"];
+				var id = params[param];
 				return id;
 			}
 		</script>
 	</head>
 	<body>
 		<script>
-			var id = getId();
+			var id = getParam("id");
 			console.log(id);
 			
 		</script>

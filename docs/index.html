@@ -13,19 +13,21 @@
 		</script>
 	</head>
 	<body>
+		<div id="button-div"></div>
 		<script>
 			var id = getParam("id");
 			console.log(id);
-			document.write("<button class=\"btn\" data-clipboard-text=\"" + id + "\">Copy</button>");
+			document.getElementById("button-div").innerHTML = "<button class=\"btn\" data-clipboard-text=\"" + id + "\">Copy</button>";
 		</script>
+		<div id="message-div"></div>
 		<script>
 			var clipboard = new ClipboardJS('.btn');
+			var message = document.getElementById("message-div");
 			clipboard.on('success', function(e) {
-				document.write("</br>Copied to clipboard!");
+				message.innerHTML = "</br>Copied to clipboard!";
 			});
 			clipboard.on('error', function(e) {
-				document.write("</br>Your browser does not support clipboard copying");
-				doucment.write("</br>id: " + id);
+				message.innerHTML = "</br>Your browser does not support clipboard copying </br>id: " + id;
 			});
 		</script>
 	</body>

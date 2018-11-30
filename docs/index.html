@@ -8,6 +8,7 @@
 				var uri = URI(document.documentURI);
 				var params = uri.search(true);
 				var id = params[param];
+				id = decodeURI(id);
 				return id;
 			}
 		</script>
